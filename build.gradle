@@ -1,5 +1,6 @@
 plugins {
 	id 'fabric-loom' version '1.10-SNAPSHOT'
+	id 'io.github.ladysnake.chenille' version '0.14.0'
 }
 
 version = project.mod_version
@@ -7,6 +8,15 @@ group = project.maven_group
 
 base {
 	archivesName = project.archives_base_name
+}
+
+chenille {
+	customLicense = rootProject.file("LICENSE")
+	github = new URL("https://github.com/MoriyaShiine/tooltipfix")
+	javaVersion = 21
+	configurePublishing {
+		withGithubRelease()
+	}
 }
 
 dependencies {
